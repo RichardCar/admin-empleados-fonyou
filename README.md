@@ -1,6 +1,8 @@
 # AdminEmpleados
 
-Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
+[Angular] version 7.2.16.
+[Typescript] version 3.2.4.
 
 ### Tener en cuenta
 Para ejecutar satisfactoriamente la aplicación por favor instale las dependencias a tráves del comando 
