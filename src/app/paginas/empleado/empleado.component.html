@@ -1,0 +1,56 @@
+<h1> Empleado: <small>{{empleado?.nombre}} {{empleado?.apellido}}</small></h1>
+
+<div class="row ">
+    <div class="col text-right">
+        <button class="btn btn-danger" routerLink="/empleados">
+      <i class="fa fa-arrow-left"></i>
+      Regresar 
+    </button>
+    </div>
+</div>
+
+<div class="row animated fadeIn faster">
+    <div class="col-12">
+        <form action="" (ngSubmit)="Guardar(f)" #f="ngForm">
+            <div class="form-group">
+                <label class="form-label">ID</label>
+                <input type="text" placeholder="" class="form-control" name="id" disabled [(ngModel)]="empleado.id">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Nombre</label>
+                <input type="text" placeholder="Nombre de la persona" class="form-control" name="nombre" required [(ngModel)]="empleado.nombre" #nombre="ngModel" [class.is-invalid]="nombre.invalid && nombre.touched">
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                    Porfavor ingrese el nombre de la persona.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Apellido</label>
+                <input type="text" placeholder="Apellido de la persona" class="form-control" name="apellido" required [(ngModel)]="empleado.apellido" #apellido="ngModel" [class.is-invalid]="apellido.invalid && apellido.touched">
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                    Porfavor ingrese el apellido de la persona.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" name="fecha_nacimiento" [(ngModel)]="empleado.fecha_nacimiento" required #fecha_nacimiento="ngModel" [class.is-invalid]="fecha_nacimiento.invalid && fecha_nacimiento.touched">
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                    Porfavor ingrese una fecha.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Pago</label>
+                <input type="number" placeholder="Valor a pagar" class="form-control" name="pago" pattern="[0-9]{1,8}" [(ngModel)]="empleado.pago" #pago="ngModel" [class.is-invalid]="pago.invalid && pago.touched" required>
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                    Porfavor ingrese un valor mayor a 0.
+                </div>
+            </div>
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25" [disabled]="f.invalid">
+                  <i class="fa fa-save"></i>
+                  Guardar
+              </button>
+            </div>
+        </form>
+    </div>
+</div>
