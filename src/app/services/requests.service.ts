@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EmpleadoModel } from '../models/empleado.model';
+import { environment } from '../../environments/environment';
+
 import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class RequestsService {
 
-  endPoint = 'https://fonyou-prueba-default-rtdb.firebaseio.com/';
+  endPoint = environment.endpoint;
 
   constructor(private http: HttpClient) { }
   /* se coloca .json para indicarle a firebase que queremos utilizar el RESTful API */
